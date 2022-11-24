@@ -25012,7 +25012,7 @@ var ROS3D = (function (exports, ROSLIB) {
 			state.scissor( _currentScissor.copy( _scissor ).multiplyScalar( _pixelRatio ).floor() );
 			state.viewport( _currentViewport.copy( _viewport ).multiplyScalar( _pixelRatio ).floor() );
 
-			info = new WebGLInfo( _gl );
+			info = new WebGLInfo();
 			properties = new WebGLProperties();
 			textures = new WebGLTextures( _gl, extensions, state, properties, capabilities, utils, info );
 			attributes = new WebGLAttributes( _gl, capabilities );
@@ -63884,7 +63884,7 @@ vec4 envMapTexelToLinear(vec4 color) {
 
 	    this.geom = new THREE.BufferGeometry();
 	    this.vertices = new THREE.BufferAttribute(new Float32Array( 6 * this.keep ), 3 );
-	    this.geom.addAttribute( 'position',  this.vertices);
+	    this.geom.setAttribute( 'position',  this.vertices);
 	    this.material = material.isMaterial ? material : new THREE.LineBasicMaterial( material );
 	    this.line = new THREE.Line( this.geom, this.material );
 	    this.rootObject.add(this.object3d);
